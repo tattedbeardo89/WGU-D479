@@ -167,26 +167,29 @@ footer p {
         flex-direction: column; /* Stack logo and nav vertically */
         align-items: flex-start; /* Align items to the start */
         padding: 10px 15px; /* Adjust padding for mobile */
+        height: auto; /* Allow header to grow with content */
+    }
+
+    header .logo {
+        display: none; /* Hide the logo on mobile */
     }
 
     nav {
         width: 100%; /* Full width for nav */
-        margin-top: 10px; /* Space between logo and nav */
+        margin: 0; /* Remove margin to reduce space */
+        padding: 0; /* Remove padding */
     }
 
     nav ul {
         display: block; /* Stack nav items vertically */
         text-align: center;
-        padding: 0;
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
     }
 
     nav ul li {
         margin: 5px 0; /* Reduce space between vertical nav items */
         display: block; /* Ensure nav items stack vertically */
-    }
-
-    header .logo {
-        display: none; /* Hide the logo on mobile */
     }
 
     main {
