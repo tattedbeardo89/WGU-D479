@@ -23,7 +23,7 @@ header {
 }
 
 header .logo {
-    max-width: 150px; /* Adjust as needed */
+    max-width: 120px; /* Reduced logo size */
     height: auto;
     position: absolute; /* Position logo absolutely */
     left: 20px; /* Align to the left of header */
@@ -166,7 +166,7 @@ footer p {
     header {
         flex-direction: column; /* Stack logo and nav vertically */
         align-items: flex-start; /* Align items to the start */
-        padding: 10px; /* Adjust padding for mobile */
+        padding: 10px 15px; /* Adjust padding for mobile */
     }
 
     nav {
@@ -181,12 +181,12 @@ footer p {
     }
 
     nav ul li {
-        margin: 10px 0; /* Space between vertical nav items */
+        margin: 5px 0; /* Reduce space between vertical nav items */
         display: block; /* Ensure nav items stack vertically */
     }
 
     header .logo {
-        position: static; /* Reset position for mobile */
+        max-width: 100px; /* Further reduced logo size */
         margin-bottom: 10px; /* Space below logo */
     }
 
