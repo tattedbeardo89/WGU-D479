@@ -26,35 +26,35 @@
             <p>Select a vehicle type below to view details and pricing:</p>
             <div class="car-gallery">
                 <div class="car-box">
-                    <a href="#" onclick="selectVehicle('Compact')">
+                    <a href="#" onclick="selectVehicle('Compact', 30)">
                         <img src="vehicles/images/compact.jpg" alt="Compact Car" class="car-image">
                         <h3>Compact</h3>
                         <p>Daily Price: $30</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="#" onclick="selectVehicle('Sedan')">
+                    <a href="#" onclick="selectVehicle('Sedan', 40)">
                         <img src="vehicles/images/sedan.jpg" alt="Sedan" class="car-image">
                         <h3>Sedan</h3>
                         <p>Daily Price: $40</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="#" onclick="selectVehicle('SUV')">
+                    <a href="#" onclick="selectVehicle('SUV', 60)">
                         <img src="vehicles/images/suv.jpg" alt="SUV" class="car-image">
                         <h3>SUV</h3>
                         <p>Daily Price: $60</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="#" onclick="selectVehicle('Convertible')">
+                    <a href="#" onclick="selectVehicle('Convertible', 80)">
                         <img src="vehicles/images/convertible.jpg" alt="Convertible" class="car-image">
                         <h3>Convertible</h3>
                         <p>Daily Price: $80</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="#" onclick="selectVehicle('Motorcycle')">
+                    <a href="#" onclick="selectVehicle('Motorcycle', 50)">
                         <img src="vehicles/images/motorcycle.jpg" alt="Motorcycle" class="car-image">
                         <h3>Motorcycle</h3>
                         <p>Daily Price: $50</p>
@@ -67,6 +67,7 @@
             <h2>Book Your Vehicle</h2>
             <form id="rentalForm">
                 <input type="hidden" id="car-type" name="car-type">
+                <input type="hidden" id="daily-rate" name="daily-rate">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -89,9 +90,15 @@
     </footer>
 
     <script>
-        function selectVehicle(vehicleType) {
+        function selectVehicle(vehicleType, dailyRate) {
             document.getElementById('car-type').value = vehicleType;
-            alert(`You selected: ${vehicleType}`);
+            document.getElementById('daily-rate').value = dailyRate;
+            alert(`You selected: ${vehicleType} at $${dailyRate} per day`);
+        }
+
+        function setMinDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickup-date').setAttribute('min', today);
         }
 
         document.getElementById('rentalForm').addEventListener('submit', function(event) {
@@ -101,19 +108,35 @@
             const carType = document.getElementById('car-type').value;
             const pickupDate = document.getElementById('pickup-date').value;
             const returnDate = document.getElementById('return-date').value;
+            const dailyRate = parseFloat(document.getElementById('daily-rate').value);
 
             if (!carType) {
                 alert('Please select a vehicle type before booking.');
                 return;
             }
 
+            // Check if return date is after pickup date
+            if (new Date(returnDate) <= new Date(pickupDate)) {
+                alert('Return date must be after the pick-up date.');
+                return;
+            }
+
+            // Calculate number of days and total amount
+            const pickup = new Date(pickupDate);
+            const returnDateParsed = new Date(returnDate);
+            const numberOfDays = (returnDateParsed - pickup) / (1000 * 60 * 60 * 24);
+            const totalAmount = numberOfDays * dailyRate;
+
             const confirmationDiv = document.getElementById('rental-confirmation');
             const confirmationDetails = document.getElementById('confirmation-details');
 
-            confirmationDetails.innerHTML = `Thank you, ${name}! You have successfully booked a ${carType} from ${pickupDate} to ${returnDate}.`;
+            confirmationDetails.innerHTML = `Thank you, ${name}! You have successfully booked a ${carType} from ${pickupDate} to ${returnDate}. <br> Daily Rate: $${dailyRate} <br> Total Amount before taxes and fees: $${totalAmount.toFixed(2)}`;
 
             confirmationDiv.style.display = 'block';
         });
+
+        // Set minimum date on page load
+        window.onload = setMinDate;
     </script>
 </body>
 </html>
