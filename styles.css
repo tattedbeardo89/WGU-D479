@@ -169,8 +169,7 @@ footer p {
     }
 
     header .logo {
-        max-width: 80px; /* Adjust logo size for mobile */
-        height: auto;
+        display: none; /* Hide the logo on mobile */
     }
 
     nav {
@@ -206,6 +205,7 @@ footer p {
         max-width: 100%;
     }
 }
+
 
 /* About Page Styles */
 .about-image {
