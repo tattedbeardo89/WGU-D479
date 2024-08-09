@@ -176,7 +176,7 @@ footer p {
         width: 100%; /* Full width for nav */
         display: flex;
         justify-content: center; /* Center the nav items */
-        margin-top: 10px; /* Space between logo and nav */
+        margin-top: 0px; /* Space between logo and nav */
     }
 
     nav ul {
