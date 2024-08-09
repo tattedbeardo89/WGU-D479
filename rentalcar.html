@@ -26,40 +26,94 @@
             <p>Select a vehicle type below to view details and pricing:</p>
             <div class="car-gallery">
                 <div class="car-box">
-                    <a href="vehicles/compact.html">
+                    <a href="#" onclick="selectVehicle('Compact')">
                         <img src="vehicles/images/compact.jpg" alt="Compact Car" class="car-image">
                         <h3>Compact</h3>
+                        <p>Daily Price: $30</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="vehicles/sedan.html">
+                    <a href="#" onclick="selectVehicle('Sedan')">
                         <img src="vehicles/images/sedan.jpg" alt="Sedan" class="car-image">
                         <h3>Sedan</h3>
+                        <p>Daily Price: $40</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="vehicles/suv.html">
+                    <a href="#" onclick="selectVehicle('SUV')">
                         <img src="vehicles/images/suv.jpg" alt="SUV" class="car-image">
                         <h3>SUV</h3>
+                        <p>Daily Price: $60</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="vehicles/convertible.html">
+                    <a href="#" onclick="selectVehicle('Convertible')">
                         <img src="vehicles/images/convertible.jpg" alt="Convertible" class="car-image">
                         <h3>Convertible</h3>
+                        <p>Daily Price: $80</p>
                     </a>
                 </div>
                 <div class="car-box">
-                    <a href="vehicles/motorcycle.html">
+                    <a href="#" onclick="selectVehicle('Motorcycle')">
                         <img src="vehicles/images/motorcycle.jpg" alt="Motorcycle" class="car-image">
                         <h3>Motorcycle</h3>
+                        <p>Daily Price: $50</p>
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Book Your Vehicle</h2>
+            <form id="rentalForm">
+                <input type="hidden" id="car-type" name="car-type">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="pickup-date">Pick-up Date:</label>
+                <input type="date" id="pickup-date" name="pickup-date" required>
+
+                <label for="return-date">Return Date:</label>
+                <input type="date" id="return-date" name="return-date" required>
+                
+                <input type="submit" value="Book Now">
+            </form>
+            <div id="rental-confirmation" style="display: none;">
+                <h2>Booking Confirmed!</h2>
+                <p id="confirmation-details"></p>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Taniti Island Tourism. All rights reserved.</p>
     </footer>
+
+    <script>
+        function selectVehicle(vehicleType) {
+            document.getElementById('car-type').value = vehicleType;
+            alert(`You selected: ${vehicleType}`);
+        }
+
+        document.getElementById('rentalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const carType = document.getElementById('car-type').value;
+            const pickupDate = document.getElementById('pickup-date').value;
+            const returnDate = document.getElementById('return-date').value;
+
+            if (!carType) {
+                alert('Please select a vehicle type before booking.');
+                return;
+            }
+
+            const confirmationDiv = document.getElementById('rental-confirmation');
+            const confirmationDetails = document.getElementById('confirmation-details');
+
+            confirmationDetails.innerHTML = `Thank you, ${name}! You have successfully booked a ${carType} from ${pickupDate} to ${returnDate}.`;
+
+            confirmationDiv.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
