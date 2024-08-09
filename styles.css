@@ -12,8 +12,8 @@ header {
     color: white;
     padding: 10px 15px; /* Reduced padding */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     position: fixed; /* Fix position to stay visible on scroll */
     top: 0; /* Align to the top of the viewport */
     left: 0; /* Align to the left of the viewport */
@@ -23,29 +23,26 @@ header {
 }
 
 header .logo {
-    max-width: 100px; /* Reduced logo size */
+    max-width: 120px; /* Reduced logo size */
     height: auto;
-    margin-bottom: 5px; /* Reduce space below logo */
+    margin-right: auto; /* Push nav to the right */
 }
 
 nav {
-    width: 100%; /* Full width for nav */
     display: flex;
-    justify-content: center; /* Center the nav items */
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+    align-items: center; /* Center vertically */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: block; /* Stack nav items vertically */
-    text-align: center;
+    display: flex; /* Keep nav items horizontal */
+    gap: 20px; /* Space between items */
 }
 
 nav ul li {
-    margin: 5px 0; /* Reduce space between vertical nav items */
+    position: relative; /* For positioning the hover effect */
 }
 
 nav ul li a {
@@ -176,8 +173,7 @@ footer p {
 
     nav {
         width: 100%; /* Full width for nav */
-        margin: 0; /* Remove margin to reduce space */
-        padding: 0; /* Remove padding */
+        margin-top: 0; /* Remove margin to reduce space */
     }
 
     nav ul {
