@@ -24,21 +24,25 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Center align the nav items */
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
+    position: relative; /* For positioning the hover effect */
 }
 
 nav ul li a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
     font-weight: bold;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    display: inline-block; /* Allow scaling effect */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    transform: scale(1.2); /* Increase size by 20% */
 }
 
 main {
@@ -214,6 +218,7 @@ footer p {
     max-width: 500px;
     height: auto;
     border-radius: 8px;
+    object-fit: cover; /* Ensure images cover the container area without distortion */
 }
 
 /* Attractions Section */
@@ -238,6 +243,7 @@ footer p {
     width: 100%;
     height: auto;
     border-bottom: 2px solid #ddd;
+    object-fit: cover; /* Ensure images cover the container area without distortion */
 }
 
 .attraction-box h3 {
