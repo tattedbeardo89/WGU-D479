@@ -10,7 +10,7 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 10px 0; /* Adjusted padding */
+    padding: 20px 0; /* Increase padding for larger header */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center content horizontally */
@@ -55,7 +55,7 @@ nav ul li a:hover {
 
 main {
     max-width: 1200px;
-    margin: 80px auto 20px; /* Ensure enough margin-top to avoid overlap with fixed header */
+    margin: 120px auto 20px; /* Adjusted margin-top to ensure no overlap with the fixed header */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -159,7 +159,7 @@ footer p {
     header {
         flex-direction: column; /* Stack logo and nav vertically */
         align-items: center; /* Center items horizontally */
-        padding: 10px; /* Adjust padding for mobile */
+        padding: 15px; /* Adjust padding for mobile */
     }
 
     nav {
@@ -181,7 +181,7 @@ footer p {
 
     main {
         padding: 15px;
-        margin: 80px auto 10px; /* Adjust margin to avoid overlap with fixed header */
+        margin: 130px auto 10px; /* Adjust margin to avoid overlap with fixed header */
     }
 
     footer {
