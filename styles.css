@@ -29,7 +29,8 @@ header .logo {
 
 nav {
     display: flex;
-    align-items: center; /* Center vertically */
+    justify-content: center; /* Center the nav items */
+    flex-grow: 1; /* Allow nav to take up remaining space */
 }
 
 nav ul {
@@ -38,7 +39,6 @@ nav ul {
     padding: 0;
     display: flex; /* Keep nav items horizontal */
     gap: 20px; /* Space between items */
-    justify-content: center; /* Center nav items horizontally */
 }
 
 nav ul li {
@@ -165,27 +165,32 @@ footer p {
         align-items: center; /* Center items horizontally */
         padding: 10px; /* Adjust padding for mobile */
         justify-content: center; /* Center content vertically */
+        gap: 10px; /* Add space between items */
     }
 
     header .logo {
-        display: none; /* Hide the logo on mobile */
+        max-width: 80px; /* Adjust logo size for mobile */
+        height: auto;
     }
 
     nav {
         width: 100%; /* Full width for nav */
-        margin-top: 0; /* Remove top margin */
+        display: flex;
+        justify-content: center; /* Center the nav items */
+        margin-top: 10px; /* Space between logo and nav */
     }
 
     nav ul {
-        display: block; /* Stack nav items vertically */
-        text-align: center;
+        display: flex; /* Keep nav items horizontal on mobile */
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
         padding: 0; /* Remove padding */
         margin: 0; /* Remove margin */
+        gap: 5px; /* Space between items */
     }
 
     nav ul li {
-        margin: 5px 0; /* Reduce space between vertical nav items */
-        display: block; /* Ensure nav items stack vertically */
+        margin: 0; /* Remove extra margin */
     }
 
     main {
