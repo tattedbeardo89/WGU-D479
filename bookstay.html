@@ -23,29 +23,79 @@
     <main>
         <section>
             <h2>Choose Your Lodging</h2>
-            <p>From hostels to luxurious resorts, Taniti offers a variety of accommodations to suit every budget. Click on an image below to view more details and book your stay.</p>
-            <div class="accommodation-gallery">
-                <a href="accomodations/hostel.html" class="accommodation-box">
-                    <img src="accomodations/images/hostel.jpg" alt="Hostel" class="accommodation-image">
-                    <h3>Hostel</h3>
-                </a>
-                <a href="accomodations/hotel.html" class="accommodation-box">
-                    <img src="accomodations/images/hotel.jpg" alt="Hotel" class="accommodation-image">
-                    <h3>Hotel</h3>
-                </a>
-                <a href="accomodations/bnb.html" class="accommodation-box">
-                    <img src="accomodations/images/bnb.jpg" alt="Bed & Breakfast" class="accommodation-image">
-                    <h3>Bed & Breakfast</h3>
-                </a>
-                <a href="accomodations/resort.html" class="accommodation-box">
-                    <img src="accomodations/images/resort.jpg" alt="Resort" class="accommodation-image">
-                    <h3>Resort</h3>
-                </a>
+            <p>From hostels to luxurious resorts, Taniti offers a variety of accommodations to suit every budget. Click on an image below to select your stay and see more details.</p>
+            <form id="stayForm">
+                <input type="hidden" id="accommodation-type" name="accommodation-type">
+                <div class="accommodation-gallery">
+                    <div class="accommodation-box" onclick="selectAccommodation('Hostel')">
+                        <img src="accomodations/images/hostel.jpg" alt="Hostel" class="accommodation-image">
+                        <h3>Hostel</h3>
+                        <p>Price: $30/night</p>
+                    </div>
+                    <div class="accommodation-box" onclick="selectAccommodation('Hotel')">
+                        <img src="accomodations/images/hotel.jpg" alt="Hotel" class="accommodation-image">
+                        <h3>Hotel</h3>
+                        <p>Price: $120/night</p>
+                    </div>
+                    <div class="accommodation-box" onclick="selectAccommodation('Bed & Breakfast')">
+                        <img src="accomodations/images/bnb.jpg" alt="Bed & Breakfast" class="accommodation-image">
+                        <h3>Bed & Breakfast</h3>
+                        <p>Price: $80/night</p>
+                    </div>
+                    <div class="accommodation-box" onclick="selectAccommodation('Resort')">
+                        <img src="accomodations/images/resort.jpg" alt="Resort" class="accommodation-image">
+                        <h3>Resort</h3>
+                        <p>Price: $250/night</p>
+                    </div>
+                </div>
+                <h2>Book Your Stay</h2>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="checkin-date">Check-in Date:</label>
+                <input type="date" id="checkin-date" name="checkin-date" required>
+                <label for="checkout-date">Check-out Date:</label>
+                <input type="date" id="checkout-date" name="checkout-date" required>
+                <label for="guests">Number of Guests (Max 6):</label>
+                <input type="number" id="guests" name="guests" min="1" max="6" required>
+                <input type="submit" value="Book Now">
+            </form>
+            <div id="stay-confirmation" style="display: none;">
+                <h2>Booking Confirmed!</h2>
+                <p id="confirmation-details"></p>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Taniti Island Tourism. All rights reserved.</p>
     </footer>
+
+    <script>
+        function selectAccommodation(accommodationType) {
+            document.getElementById('accommodation-type').value = accommodationType;
+            alert(`You selected: ${accommodationType}`);
+        }
+
+        document.getElementById('stayForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const accommodationType = document.getElementById('accommodation-type').value;
+            const checkinDate = document.getElementById('checkin-date').value;
+            const checkoutDate = document.getElementById('checkout-date').value;
+            const guests = document.getElementById('guests').value;
+
+            if (!accommodationType) {
+                alert('Please select an accommodation type before booking.');
+                return;
+            }
+
+            const confirmationDiv = document.getElementById('stay-confirmation');
+            const confirmationDetails = document.getElementById('confirmation-details');
+
+            confirmationDetails.innerHTML = `Thank you, ${name}! You have successfully booked a stay in a ${accommodationType} from ${checkinDate} to ${checkoutDate} for ${guests} guests.`;
+
+            confirmationDiv.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
