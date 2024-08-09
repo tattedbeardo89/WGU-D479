@@ -10,7 +10,7 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 10px 20px; /* Adjusted padding */
+    padding: 10px 0; /* Adjusted padding */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center content horizontally */
@@ -55,7 +55,7 @@ nav ul li a:hover {
 
 main {
     max-width: 1200px;
-    margin: 80px auto 20px; /* Adjust margin to avoid overlap with fixed header */
+    margin: 80px auto 20px; /* Ensure enough margin-top to avoid overlap with fixed header */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -157,7 +157,7 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack nav items vertically */
+        flex-direction: column; /* Stack logo and nav vertically */
         align-items: center; /* Center items horizontally */
         padding: 10px; /* Adjust padding for mobile */
     }
