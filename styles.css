@@ -29,6 +29,7 @@ header .logo {
 
 nav {
     display: flex;
+    justify-content: center; /* Center the nav items */
 }
 
 nav ul {
@@ -162,7 +163,6 @@ footer p {
         flex-direction: column; /* Stack logo and nav vertically */
         align-items: center; /* Center items horizontally */
         padding: 10px; /* Adjust padding for mobile */
-        height: auto; /* Allow header to grow with content */
     }
 
     header .logo {
@@ -171,6 +171,8 @@ footer p {
 
     nav {
         width: 100%; /* Full width for nav */
+        display: flex;
+        justify-content: center; /* Center the nav items */
         margin-top: 10px; /* Space between logo and nav */
     }
 
