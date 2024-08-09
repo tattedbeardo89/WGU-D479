@@ -13,7 +13,7 @@ header {
     padding: 10px 20px; /* Adjusted padding */
     display: flex;
     align-items: center; /* Center vertically */
-    justify-content: space-between; /* Distribute space between items */
+    justify-content: space-between; /* Space between logo and nav on large screens */
     position: fixed; /* Fix position to stay visible on scroll */
     top: 0; /* Align to the top of the viewport */
     left: 0; /* Align to the left of the viewport */
@@ -166,7 +166,7 @@ footer p {
     }
 
     header .logo {
-        max-width: 100px; /* Further reduce logo size on mobile */
+        display: none; /* Hide the logo on mobile */
     }
 
     nav {
