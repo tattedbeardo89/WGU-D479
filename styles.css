@@ -10,10 +10,10 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 15px 20px;
+    padding: 10px 15px; /* Reduced padding */
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
     position: fixed; /* Fix position to stay visible on scroll */
     top: 0; /* Align to the top of the viewport */
     left: 0; /* Align to the left of the viewport */
@@ -23,29 +23,29 @@ header {
 }
 
 header .logo {
-    max-width: 120px; /* Reduced logo size */
+    max-width: 100px; /* Reduced logo size */
     height: auto;
-    position: absolute; /* Position logo absolutely */
-    left: 20px; /* Align to the left of header */
+    margin-bottom: 5px; /* Reduce space below logo */
 }
 
 nav {
-    flex: 1; /* Take up remaining space */
+    width: 100%; /* Full width for nav */
     display: flex;
     justify-content: center; /* Center the nav items */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center; /* Center align the nav items */
+    display: block; /* Stack nav items vertically */
+    text-align: center;
 }
 
 nav ul li {
-    margin-right: 20px;
-    position: relative; /* For positioning the hover effect */
+    margin: 5px 0; /* Reduce space between vertical nav items */
 }
 
 nav ul li a {
@@ -165,7 +165,7 @@ footer p {
 @media (max-width: 768px) {
     header {
         flex-direction: column; /* Stack logo and nav vertically */
-        align-items: flex-start; /* Align items to the start */
+        align-items: center; /* Center items horizontally */
         padding: 10px 15px; /* Adjust padding for mobile */
         height: auto; /* Allow header to grow with content */
     }
