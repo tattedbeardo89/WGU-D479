@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #e0f7fa; /* Light blue background */
     color: #333; /* Dark text color */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 header {
@@ -30,7 +31,6 @@ header .logo {
 nav {
     display: flex;
     justify-content: center; /* Center the nav items */
-    flex-grow: 1; /* Allow nav to take up remaining space */
 }
 
 nav ul {
@@ -51,6 +51,8 @@ nav ul li a {
     font-weight: bold;
     transition: transform 0.3s ease; /* Smooth transition for scaling */
     display: inline-block; /* Allow scaling effect */
+    padding: 5px 10px; /* Ensure consistent padding */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 nav ul li a:hover {
@@ -163,7 +165,7 @@ footer p {
     header {
         flex-direction: column; /* Stack logo and nav vertically */
         align-items: center; /* Center items horizontally */
-        padding: 0px; /* Adjust padding for mobile */
+        padding: 10px; /* Adjust padding for mobile */
         justify-content: center; /* Center content vertically */
         gap: 10px; /* Add space between items */
     }
@@ -176,7 +178,7 @@ footer p {
         width: 100%; /* Full width for nav */
         display: flex;
         justify-content: center; /* Center the nav items */
-        margin-top: 0px; /* Space between logo and nav */
+        margin-top: 10px; /* Space between logo and nav */
     }
 
     nav ul {
@@ -205,7 +207,6 @@ footer p {
         max-width: 100%;
     }
 }
-
 
 /* About Page Styles */
 .about-image {
