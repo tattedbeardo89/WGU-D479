@@ -1,0 +1,309 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Light blue background */
+    color: #333; /* Dark text color */
+}
+
+header {
+    background-color: #00796b; /* Teal color */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #00796b;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #004d40;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #00796b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Galleries */
+.sight-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.sight-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sight-image {
+    width: 100%;
+    height: auto;
+}
+
+.sight-box h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.sight-box p {
+    padding: 0 10px 10px;
+}
+
+/* Car Gallery */
+.car-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.car-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+}
+
+.car-box h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Accommodation Gallery */
+.accommodation-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.accommodation-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accommodation-image {
+    width: 100%;
+    height: auto;
+}
+
+.accommodation-box h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    main {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+/* About Page Styles */
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.amenities-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.amenity-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.amenity-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+.amenity-box p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Intro Section Images */
+.intro-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.intro-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Attractions Section */
+.attractions-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.attraction-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.attraction-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+.attraction-box h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.attraction-box p {
+    padding: 0 10px 10px;
+}
