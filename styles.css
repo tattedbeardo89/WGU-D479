@@ -30,8 +30,8 @@ header .logo {
 
 nav {
     display: flex;
-    justify-content: center; /* Center the nav items */
     flex-grow: 1; /* Allow nav to take up available space */
+    justify-content: center; /* Center the nav items */
 }
 
 nav ul {
@@ -73,8 +73,9 @@ h1, h2, h3 {
     color: #00796b;
 }
 
-section {
-    margin-bottom: 20px;
+/* Additional Styles to Fix Overlap */
+main {
+    padding-top: 80px; /* Ensure space for fixed header */
 }
 
 /* Responsive Image Styles */
