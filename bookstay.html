@@ -26,23 +26,24 @@
             <p>From hostels to luxurious resorts, Taniti offers a variety of accommodations to suit every budget. Click on an image below to select your stay and see more details.</p>
             <form id="stayForm">
                 <input type="hidden" id="accommodation-type" name="accommodation-type">
+                <input type="hidden" id="daily-rate" name="daily-rate">
                 <div class="accommodation-gallery">
-                    <div class="accommodation-box" onclick="selectAccommodation('Hostel')">
+                    <div class="accommodation-box" onclick="selectAccommodation('Hostel', 30)">
                         <img src="accomodations/images/hostel.jpg" alt="Hostel" class="accommodation-image">
                         <h3>Hostel</h3>
                         <p>Price: $30/night</p>
                     </div>
-                    <div class="accommodation-box" onclick="selectAccommodation('Hotel')">
+                    <div class="accommodation-box" onclick="selectAccommodation('Hotel', 120)">
                         <img src="accomodations/images/hotel.jpg" alt="Hotel" class="accommodation-image">
                         <h3>Hotel</h3>
                         <p>Price: $120/night</p>
                     </div>
-                    <div class="accommodation-box" onclick="selectAccommodation('Bed & Breakfast')">
+                    <div class="accommodation-box" onclick="selectAccommodation('Bed & Breakfast', 80)">
                         <img src="accomodations/images/bnb.jpg" alt="Bed & Breakfast" class="accommodation-image">
                         <h3>Bed & Breakfast</h3>
                         <p>Price: $80/night</p>
                     </div>
-                    <div class="accommodation-box" onclick="selectAccommodation('Resort')">
+                    <div class="accommodation-box" onclick="selectAccommodation('Resort', 250)">
                         <img src="accomodations/images/resort.jpg" alt="Resort" class="accommodation-image">
                         <h3>Resort</h3>
                         <p>Price: $250/night</p>
@@ -70,9 +71,15 @@
     </footer>
 
     <script>
-        function selectAccommodation(accommodationType) {
+        function selectAccommodation(accommodationType, dailyRate) {
             document.getElementById('accommodation-type').value = accommodationType;
-            alert(`You selected: ${accommodationType}`);
+            document.getElementById('daily-rate').value = dailyRate;
+            alert(`You selected: ${accommodationType} at $${dailyRate} per night`);
+        }
+
+        function setMinDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkin-date').setAttribute('min', today);
         }
 
         document.getElementById('stayForm').addEventListener('submit', function(event) {
@@ -83,19 +90,35 @@
             const checkinDate = document.getElementById('checkin-date').value;
             const checkoutDate = document.getElementById('checkout-date').value;
             const guests = document.getElementById('guests').value;
+            const dailyRate = parseFloat(document.getElementById('daily-rate').value);
 
             if (!accommodationType) {
                 alert('Please select an accommodation type before booking.');
                 return;
             }
 
+            // Check if check-out date is after check-in date
+            if (new Date(checkoutDate) <= new Date(checkinDate)) {
+                alert('Check-out date must be after the check-in date.');
+                return;
+            }
+
+            // Calculate number of nights and total amount
+            const checkin = new Date(checkinDate);
+            const checkout = new Date(checkoutDate);
+            const numberOfNights = (checkout - checkin) / (1000 * 60 * 60 * 24);
+            const totalAmount = numberOfNights * dailyRate;
+
             const confirmationDiv = document.getElementById('stay-confirmation');
             const confirmationDetails = document.getElementById('confirmation-details');
 
-            confirmationDetails.innerHTML = `Thank you, ${name}! You have successfully booked a stay in a ${accommodationType} from ${checkinDate} to ${checkoutDate} for ${guests} guests.`;
+            confirmationDetails.innerHTML = `Thank you, ${name}! You have successfully booked a stay in a ${accommodationType} from ${checkinDate} to ${checkoutDate} for ${guests} guests. <br> Nightly Rate: $${dailyRate} <br> Total Amount before taxes and fees: $${totalAmount.toFixed(2)}`;
 
             confirmationDiv.style.display = 'block';
         });
+
+        // Set minimum date on page load
+        window.onload = setMinDate;
     </script>
 </body>
 </html>
