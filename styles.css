@@ -58,6 +58,13 @@ section {
     margin-bottom: 20px;
 }
 
+/* Responsive Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures no extra space below images */
+}
+
 /* Form Styles */
 form {
     display: flex;
@@ -94,9 +101,8 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
 }
 
 footer p {
@@ -104,101 +110,29 @@ footer p {
 }
 
 /* Galleries */
-.sight-gallery {
+.sight-gallery, .car-gallery, .accommodation-gallery, .amenities-gallery, .attractions-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.sight-box {
+.sight-box, .car-box, .accommodation-box, .amenity-box, .attraction-box {
     border: 2px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;
-    text-align: center;
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.sight-image {
-    width: 100%;
-    height: auto;
-}
-
-.sight-box h3 {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
-
-.sight-box p {
-    padding: 0 10px 10px;
-}
-
-/* Car Gallery */
-.car-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.car-box {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 250px;
     text-align: center;
-    background-color: #f9f9f9;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
 }
 
-.car-image {
+.sight-image, .car-image, .accommodation-image, .amenity-image, .attraction-image {
     width: 100%;
     height: auto;
-}
-
-.car-box h3 {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-/* Accommodation Gallery */
-.accommodation-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.accommodation-box {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 250px;
-    text-align: center;
-    background-color: #f9f9f9;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.accommodation-image {
-    width: 100%;
-    height: auto;
-}
-
-.accommodation-box h3 {
-    margin: 10px 0;
-    font-size: 1.5em;
 }
 
 /* Responsive Design */
@@ -206,23 +140,27 @@ footer p {
     nav ul {
         text-align: center;
     }
-    
+
     nav ul li {
         display: block;
         margin: 10px 0;
     }
-    
+
     header h1 {
         font-size: 1.5em;
     }
-    
+
     main {
         padding: 15px;
         margin: 10px;
     }
-    
+
     footer {
         font-size: 0.9em;
+    }
+
+    .sight-box, .car-box, .accommodation-box, .amenity-box, .attraction-box {
+        max-width: 100%;
     }
 }
 
@@ -245,9 +183,10 @@ footer p {
     border: 2px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    width: 250px;
-    text-align: center;
     background-color: #f9f9f9;
+    text-align: center;
+    width: 100%;
+    max-width: 250px; /* Adjust as needed */
 }
 
 .amenity-image {
@@ -264,6 +203,7 @@ footer p {
 /* Intro Section Images */
 .intro-images {
     display: flex;
+    flex-wrap: wrap; /* Ensure images wrap on smaller screens */
     gap: 20px;
     justify-content: center;
     margin: 20px 0;
@@ -288,9 +228,10 @@ footer p {
     border: 2px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;
-    text-align: center;
     background-color: #f9f9f9;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
 }
 
 .attraction-image {
