@@ -186,8 +186,7 @@ footer p {
     }
 
     header .logo {
-        max-width: 100px; /* Further reduced logo size */
-        margin-bottom: 10px; /* Space below logo */
+        display: none; /* Hide the logo on mobile */
     }
 
     main {
