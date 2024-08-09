@@ -10,7 +10,7 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 20px 0; /* Increase padding for larger header */
+    padding: 10px 0; /* Increase padding for larger header */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center content horizontally */
