@@ -5,7 +5,6 @@ body {
     padding: 0;
     background-color: #e0f7fa; /* Light blue background */
     color: #333; /* Dark text color */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 header {
@@ -29,8 +28,8 @@ header .logo {
 }
 
 nav {
+    flex: 1; /* Take up remaining space */
     display: flex;
-    flex-grow: 1; /* Allow nav to take up available space */
     justify-content: center; /* Center the nav items */
 }
 
@@ -52,8 +51,6 @@ nav ul li a {
     font-weight: bold;
     transition: transform 0.3s ease; /* Smooth transition for scaling */
     display: inline-block; /* Allow scaling effect */
-    padding: 5px 10px; /* Ensure consistent padding */
-    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 nav ul li a:hover {
@@ -73,9 +70,8 @@ h1, h2, h3 {
     color: #00796b;
 }
 
-/* Additional Styles to Fix Overlap */
-main {
-    padding-top: 80px; /* Ensure space for fixed header */
+section {
+    margin-bottom: 20px;
 }
 
 /* Responsive Image Styles */
@@ -168,12 +164,11 @@ footer p {
         flex-direction: column; /* Stack logo and nav vertically */
         align-items: center; /* Center items horizontally */
         padding: 10px; /* Adjust padding for mobile */
-        justify-content: center; /* Center content vertically */
-        gap: 10px; /* Add space between items */
     }
 
     header .logo {
-        display: none; /* Hide the logo on mobile */
+        max-width: 100px; /* Further reduced logo size for mobile */
+        margin-bottom: 10px; /* Space below logo */
     }
 
     nav {
@@ -184,16 +179,15 @@ footer p {
     }
 
     nav ul {
-        display: flex; /* Keep nav items horizontal on mobile */
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: center; /* Center nav items */
+        display: block; /* Stack nav items vertically */
+        text-align: center;
         padding: 0; /* Remove padding */
         margin: 0; /* Remove margin */
-        gap: 5px; /* Space between items */
     }
 
     nav ul li {
-        margin: 0; /* Remove extra margin */
+        margin: 5px 0; /* Reduce space between vertical nav items */
+        display: block; /* Ensure nav items stack vertically */
     }
 
     main {
