@@ -10,14 +10,29 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 15px 0;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    position: fixed; /* Fix position to stay visible on scroll */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 1000; /* Ensure header is above other content */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
+header .logo {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+    position: absolute; /* Position logo absolutely */
+    left: 20px; /* Align to the left of header */
+}
+
+nav {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center; /* Center the nav items */
 }
 
 nav ul {
@@ -47,7 +62,7 @@ nav ul li a:hover {
 
 main {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 80px auto 20px; /* Add top margin to avoid overlap with fixed header */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -132,11 +147,18 @@ footer p {
     text-align: center;
     width: 100%;
     max-width: 300px; /* Adjust as needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .sight-image, .car-image, .accommodation-image, .amenity-image, .attraction-image {
     width: 100%;
     height: auto;
+}
+
+/* Hover Effects */
+.accommodation-box:hover, .car-box:hover {
+    transform: scale(1.05); /* Scale up to 105% of the original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow to enhance the effect */
 }
 
 /* Responsive Design */
@@ -156,7 +178,7 @@ footer p {
 
     main {
         padding: 15px;
-        margin: 10px;
+        margin: 80px auto 10px; /* Adjust margin to avoid overlap with fixed header */
     }
 
     footer {
