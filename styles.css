@@ -84,7 +84,7 @@ nav ul li a:hover {
     width: 30px; /* Adjust width for better visibility */
     height: 3px; /* Adjust height for better visibility */
     background-color: white;
-    margin: 0px 0; /* Adjust margin for better spacing */
+    margin: 5px 0; /* Adjust margin for better spacing */
     transition: 0.4s;
 }
 
