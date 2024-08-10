@@ -9,8 +9,11 @@
 <body>
     <header>
         <h1>Welcome to Taniti Island</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
         <nav>
-            <ul>
+            <ul id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="sights.html">Sights</a></li>
@@ -53,5 +56,12 @@
     <footer>
         <p>&copy; 2024 Taniti Island Tourism. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("open");
+        }
+    </script>
 </body>
 </html>
