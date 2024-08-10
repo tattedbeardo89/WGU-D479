@@ -76,7 +76,7 @@ nav ul li a:hover {
     display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
-    padding: 0px; /* Adjust padding for better touch */
+    padding: 15px; /* Adjust padding for better touch */
     z-index: 1010; /* Ensure it stays above other content */
 }
 
@@ -227,7 +227,7 @@ footer p {
 
     main {
         padding: 15px;
-        margin: 145px 10px 10px; /* Adjust margin to avoid overlap with fixed header */
+        margin: 160px 10px 10px; /* Adjust margin to avoid overlap with fixed header */
     }
 
     footer {
