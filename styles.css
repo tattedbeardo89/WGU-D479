@@ -10,7 +10,7 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 15px 0;
+    padding: 15px 20px; /* Adjust padding to fit the logo */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fix the header */
@@ -18,12 +18,22 @@ header {
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure header stays above other content */
+    display: flex;
+    align-items: center; /* Align items vertically in the header */
+    justify-content: space-between; /* Adjust spacing between logo and other elements */
+}
+
+.logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the logo does not have extra space around it */
 }
 
 header h1 {
     margin: 0;
     font-size: 2em;
 }
+
 
 nav {
     position: relative;
