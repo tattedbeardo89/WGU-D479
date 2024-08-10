@@ -10,7 +10,7 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 15px 20px; /* Adjust padding to fit the logo and other elements */
+    padding: 15px 20px; /* Adjust padding to fit the logo */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fix the header */
     width: 100%;
@@ -19,18 +19,29 @@ header {
     z-index: 1000; /* Ensure header stays above other content */
     display: flex;
     align-items: center; /* Align items vertically in the header */
-    justify-content: space-between; /* Space between logo and navigation */
+    justify-content: space-between; /* Space between logo and other elements */
+    box-sizing: border-box; /* Include padding in width */
 }
 
+/* Logo Style */
+.logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the logo does not have extra space around it */
+}
+
+/* Header Title */
 header h1 {
     margin: 0;
     font-size: 2em;
-    flex: 1; /* Allow the title to take up available space */
+    flex: 1; /* Allow the title to take up space between logo and nav */
     text-align: center; /* Center align the title */
 }
 
+/* Navigation Styles */
 nav {
-    flex: 2; /* Allow navigation to take up space next to the title */
+    display: flex;
+    align-items: center; /* Center vertically */
 }
 
 nav ul {
@@ -40,10 +51,12 @@ nav ul {
     display: flex;
     justify-content: center; /* Center align the nav items */
     flex-direction: row;
+    flex: 1; /* Allow the nav items to take available space */
 }
 
 nav ul li {
     margin-right: 20px;
+    position: relative; /* For positioning the hover effect */
 }
 
 nav ul li a {
@@ -58,22 +71,24 @@ nav ul li a:hover {
     transform: scale(1.2); /* Increase size by 20% */
 }
 
+/* Hamburger Menu Styles */
 .hamburger {
     display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
-    padding: 15px; /* Increase padding for better touch */
+    padding: 15px; /* Adjust padding for better touch */
     z-index: 1010; /* Ensure it stays above other content */
 }
 
 .hamburger .bar {
     width: 30px; /* Adjust width for better visibility */
-    height: 3px;
+    height: 3px; /* Adjust height for better visibility */
     background-color: white;
     margin: 5px 0; /* Adjust margin for better spacing */
     transition: 0.4s;
 }
 
+/* Main Content */
 main {
     max-width: 1200px;
     margin: 100px auto 20px; /* Add top margin to avoid overlap with fixed header */
@@ -182,12 +197,6 @@ footer p {
         align-items: flex-start; /* Align items to the start for better alignment */
     }
 
-    header h1 {
-        font-size: 1.5em;
-        flex: none; /* Disable flex-grow on small screens */
-        text-align: left; /* Align the title to the left */
-    }
-
     nav ul {
         flex-direction: column; /* Stack nav items vertically */
         display: none; /* Hide menu by default */
@@ -210,15 +219,10 @@ footer p {
         margin-right: 0; /* Remove right margin for mobile */
     }
 
-    .hamburger {
-        display: flex; /* Show hamburger button on mobile */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hamburger .bar {
-        width: 40px; /* Make the hamburger bars larger */
-        height: 5px;
+    header h1 {
+        font-size: 1.5em;
+        flex: none; /* Disable flex-grow on small screens */
+        text-align: left; /* Align the title to the left */
     }
 
     main {
@@ -232,6 +236,13 @@ footer p {
 
     .sight-box, .car-box, .accommodation-box, .amenity-box, .attraction-box {
         max-width: 100%;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: flex; /* Show hamburger button on mobile */
+        justify-content: center;
+        align-items: center;
     }
 }
 
