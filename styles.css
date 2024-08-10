@@ -13,6 +13,11 @@ header {
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix the header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header stays above other content */
 }
 
 header h1 {
@@ -47,7 +52,7 @@ nav ul li a:hover {
 
 main {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 100px auto 20px; /* Add top margin to avoid overlap with fixed header */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -149,12 +154,15 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
+        flex-direction: column; /* Stack nav items vertically */
         text-align: center;
+        padding: 10px 0;
     }
 
     nav ul li {
+        margin: 10px 0; /* Space between stacked nav items */
         display: block;
-        margin: 10px 0;
+        margin-right: 0; /* Remove right margin for mobile */
     }
 
     header h1 {
@@ -163,7 +171,7 @@ footer p {
 
     main {
         padding: 15px;
-        margin: 10px;
+        margin: 110px 10px 10px; /* Adjust margin to avoid overlap with fixed header */
     }
 
     footer {
