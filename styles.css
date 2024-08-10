@@ -227,7 +227,7 @@ footer p {
 
     main {
         padding: 15px;
-        margin: 130px 10px 10px; /* Adjust margin to avoid overlap with fixed header */
+        margin: 160px 10px 10px; /* Adjust margin to avoid overlap with fixed header */
     }
 
     footer {
