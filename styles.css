@@ -76,7 +76,7 @@ nav ul li a:hover {
     display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
-    padding: 15px; /* Adjust padding for better touch */
+    padding: 0px; /* Adjust padding for better touch */
     z-index: 1010; /* Ensure it stays above other content */
 }
 
@@ -84,7 +84,7 @@ nav ul li a:hover {
     width: 30px; /* Adjust width for better visibility */
     height: 3px; /* Adjust height for better visibility */
     background-color: white;
-    margin: 5px 0; /* Adjust margin for better spacing */
+    margin: 10px 0; /* Adjust margin for better spacing */
     transition: 0.4s;
 }
 
