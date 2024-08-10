@@ -25,12 +25,17 @@ header h1 {
     font-size: 2em;
 }
 
+nav {
+    position: relative;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center; /* Center align the nav items */
+    flex-direction: row;
 }
 
 nav ul li {
@@ -48,6 +53,21 @@ nav ul li a {
 
 nav ul li a:hover {
     transform: scale(1.2); /* Increase size by 20% */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
 }
 
 main {
@@ -155,8 +175,13 @@ footer p {
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column; /* Stack nav items vertically */
-        text-align: center;
-        padding: 1px 0;
+        display: none; /* Hide menu by default */
+        width: 100%;
+        background-color: #00796b;
+    }
+
+    nav ul.show {
+        display: flex;
     }
 
     nav ul li {
@@ -180,6 +205,13 @@ footer p {
 
     .sight-box, .car-box, .accommodation-box, .amenity-box, .attraction-box {
         max-width: 100%;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: flex; /* Show hamburger menu on mobile */
+        justify-content: center;
+        align-items: center;
     }
 }
 
