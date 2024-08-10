@@ -64,8 +64,8 @@ nav ul li a:hover {
 }
 
 .hamburger .bar {
-    width: 60px; /* Adjust width for better visibility */
-    height: 12px;
+    width: 120px; /* Adjust width for better visibility */
+    height: 24px;
     background-color: white;
     margin: 5px 0; /* Adjust margin for better spacing */
     transition: 0.4s;
