@@ -9,8 +9,11 @@
 <body>
     <header>
         <h1>Frequently Asked Questions</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
         <nav>
-            <ul>
+            <ul id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="sights.html">Sights</a></li>
@@ -44,7 +47,7 @@
                 <dd>Taniti uses 120-volt electrical outlets, the same as in the United States.</dd>
                 
                 <dt><strong>What transportation options are available on Taniti?</strong></dt>
-                <dd>Public buses and private buses serve the island. Taxis are available in Taniti City. Rental cars and  bikes with helmets are also available. Taniti City is very walkable.</dd>
+                <dd>Public buses and private buses serve the island. Taxis are available in Taniti City. Rental cars and bikes with helmets are also available. Taniti City is very walkable.</dd>
                 
                 <dt><strong>Are there any hospitals or medical facilities on Taniti?</strong></dt>
                 <dd>Yes, Taniti has one hospital and several clinics. The hospital has many multilingual employees to assist visitors.</dd>
@@ -54,5 +57,12 @@
     <footer>
         <p>&copy; 2024 Taniti Island Tourism. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("open");
+        }
+    </script>
 </body>
 </html>
