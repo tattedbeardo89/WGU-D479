@@ -9,8 +9,11 @@
 <body>
     <header>
         <h1>Book Your Stay on Taniti Island</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
         <nav>
-            <ul>
+            <ul id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="sights.html">Sights</a></li>
@@ -80,6 +83,11 @@
         function setMinDate() {
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('checkin-date').setAttribute('min', today);
+        }
+
+        function toggleMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("open");
         }
 
         document.getElementById('stayForm').addEventListener('submit', function(event) {
