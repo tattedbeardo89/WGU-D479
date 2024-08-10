@@ -59,15 +59,15 @@ nav ul li a:hover {
     display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
-    padding: 30px !important; /* Increase padding for better touch */
+    padding: 5px !important; /* Increase padding for better touch */
     z-index: 1010; /* Ensure it stays above other content */
 }
 
 .hamburger .bar {
-    width: 60px !important; /* Increase width for better visibility */
-    height: 12px !important; /* Increase height for better visibility */
+    width: 120px !important; /* Increase width for better visibility */
+    height: 24px !important; /* Increase height for better visibility */
     background-color: white;
-    margin: 8px 0 !important; /* Adjust margin for better spacing */
+    margin: 5px 0 !important; /* Adjust margin for better spacing */
     transition: 0.4s;
 }
 
