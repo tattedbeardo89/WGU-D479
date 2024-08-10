@@ -10,8 +10,7 @@ body {
 header {
     background-color: #00796b; /* Teal color */
     color: white;
-    padding: 15px 20px; /* Adjust padding to fit the logo */
-    text-align: center;
+    padding: 15px 20px; /* Adjust padding to fit the logo and other elements */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fix the header */
     width: 100%;
@@ -20,23 +19,18 @@ header {
     z-index: 1000; /* Ensure header stays above other content */
     display: flex;
     align-items: center; /* Align items vertically in the header */
-    justify-content: space-between; /* Adjust spacing between logo and other elements */
-}
-
-.logo {
-    height: 50px; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure the logo does not have extra space around it */
+    justify-content: space-between; /* Space between logo and navigation */
 }
 
 header h1 {
     margin: 0;
     font-size: 2em;
+    flex: 1; /* Allow the title to take up available space */
+    text-align: center; /* Center align the title */
 }
 
-
 nav {
-    position: relative;
+    flex: 2; /* Allow navigation to take up space next to the title */
 }
 
 nav ul {
@@ -50,7 +44,6 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
-    position: relative; /* For positioning the hover effect */
 }
 
 nav ul li a {
@@ -69,15 +62,15 @@ nav ul li a:hover {
     display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
-    padding: 5px; /* Increase padding for better touch */
+    padding: 15px; /* Increase padding for better touch */
     z-index: 1010; /* Ensure it stays above other content */
 }
 
 .hamburger .bar {
-    width: 60px; /* Increase width for better visibility */
-    height: 24px; /* Increase height for better visibility */
+    width: 30px; /* Adjust width for better visibility */
+    height: 3px;
     background-color: white;
-    margin: 5px 0; /* Increase margin for better spacing */
+    margin: 5px 0; /* Adjust margin for better spacing */
     transition: 0.4s;
 }
 
@@ -184,6 +177,17 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start for better alignment */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        flex: none; /* Disable flex-grow on small screens */
+        text-align: left; /* Align the title to the left */
+    }
+
     nav ul {
         flex-direction: column; /* Stack nav items vertically */
         display: none; /* Hide menu by default */
@@ -206,8 +210,15 @@ footer p {
         margin-right: 0; /* Remove right margin for mobile */
     }
 
-    header h1 {
-        font-size: 1.5em;
+    .hamburger {
+        display: flex; /* Show hamburger button on mobile */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger .bar {
+        width: 40px; /* Make the hamburger bars larger */
+        height: 5px;
     }
 
     main {
@@ -221,13 +232,6 @@ footer p {
 
     .sight-box, .car-box, .accommodation-box, .amenity-box, .attraction-box {
         max-width: 100%;
-    }
-
-    /* Hamburger Menu Styles */
-    .hamburger {
-        display: flex; /* Show hamburger button on mobile */
-        justify-content: center;
-        align-items: center;
     }
 }
 
