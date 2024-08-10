@@ -76,7 +76,7 @@ nav ul li a:hover {
     display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
-    padding: 15px; /* Adjust padding for better touch */
+    padding: 5px; /* Adjust padding for better touch */
     z-index: 1010; /* Ensure it stays above other content */
 }
 
